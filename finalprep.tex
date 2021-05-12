@@ -1,0 +1,100 @@
+\input{/home/reece/Dropbox/UMKC/Notes/LaTeXPreamble/preamble}
+\usepackage{systeme}
+\usepackage{color, colortbl}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\graphicspath{ {/} }
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\title{Math 300 - Final Exam Study Guide}
+\author{Reece McMillin}
+\begin{document}
+\maketitle
+\tableofcontents
+\large
+\hyperlink{cramer}{1. Cramer's Rule}
+
+\hyperlink{detarea}{2. Determinants as Area}
+
+\hyperlink{eigen}{3. Eigenvalues \& Eigenvectors}
+
+\hyperlink{diag}{4. The Diagonalization Theorem}
+
+\hyperlink{imt}{5. Invertible Matrix Theorem}
+\pagebreak
+\normalsize
+\begin{defbox}{Cramer's Rule}
+    \hypertarget{cramer}
+    \[
+        \mathbf{A}_i(b) = \begin{bmatrix}a_1, \dots, b, \dots, a_2\end{bmatrix}
+    \]
+    Let $\mathbf{A}$ be an invertible $n \times n$ matrix. For any $b \in \mathbb{R}^n$, the unique solution $\vec{x}$ of $\mathbf{A}\vec{x} = b$ has entries given by
+    \[
+    \vec{x}_i = \frac{\det{\mathbf{A}_i(b)}}{\det{\mathbf{A}}}
+    \]
+    An inverse formula extending from Cramer's Rule is
+    \[
+        \mathbf{A}^{-1} = \frac{1}{\det{A}} \cdot \text{adj}(\mathbf{A})
+    \]
+\end{defbox}
+\begin{defbox}{Determinants as Area}
+    \hypertarget{detarea}
+    If $\mathbf{A}$ is a $2\times2$ matrix, the area of the parallelogram determined by the columns of $\mathbf{A}$ is $\left|\det{A}\right|$. If $\mathbf{A}$ is a $3\times3$ matrix, the volume of the parallelopiped determined by the columns of $\mathbf{A}$ is $\left|\det{A}\right|$.
+\end{defbox}
+\begin{defbox}{Eigenvalues \& Eigenvectors}
+    \hypertarget{eigen}
+    An \textbf{eigenvector} of $\mathbf{A}$ (corresponding to $\lambda$) is a nonzero vector x such that 
+    \[
+        \mathbf{A}x = \lambda x
+    \]
+    A scalar $\lambda$ is an \textbf{eigenvalue} of $\mathbf{A}$ if there exists a nonzero vector $x$ such that
+    \[
+        \mathbf{A}x = \lambda x
+    \]
+    More formally, let $\mathbf{V}$ be a vector space. An \textbf{eigenvector} of a linear transformation $\mathbf{T} : \mathbf{V} \to \mathbf{V}$ is a nonzero vector $x \in \mathbf{V}$ such that $\mathbf{T}(x) = \lambda x$ for some scalar $\lambda$. This scalar $\lambda$ is called an \textbf{eigenvalue} of $\mathbf{T}$ if there is a nontrivial solution $x$ of $\mathbf{T}(x) = \lambda x$; ssuch an $x$ is called an \textbf{eigenvector} corresponding to $\lambda$.
+\end{defbox}
+\begin{defbox}{The Diagonalization Theorem}
+    \hypertarget{diag}
+    An $n\times n$ matrix $\mathbf{A}$ is diagonalizable if and only if $\mathbf{A}$ has $n$ linearly independent eigenvectors.\\\\
+    In fact, $\mathbf{A} = \mathbf{PDP}^{-1}$, with diagonal matrix $\mathbf{D}$, if and only if the columns of $\mathbf{P}$ are $n$ linearly independent eigenvectors of $A$. In this case, the diagonal entries of $\mathbf{D}$ are eigenvalues of $\mathbf{A}$ that correspond respectively to the eigenvectors in $\mathbf{P}$.\\\\
+    \textbf{Theorem: }An $n\times n$ matrix with $n$ distinct eigenvalues is diagonalizable.
+\end{defbox}
+\pagebreak
+\begin{defbox}{\hypertarget{imt} Invertible Matrix Theorem}
+    \begin{enumerate}
+        \item $\mathbf{A}$ is row-equivalent to the $n\times n$ identity matrix $\mathbf{I}_n$.
+        \item $\mathbf{A}$ has $n$ pivot positions.
+        \item The equation $\mathbf{A}x = 0$ has only the trivial solution $x = 0$.
+        \item The columns of $\mathbf{A}$ form a linearly independent set.
+        \item The linear transformation $x \mapsto \mathbf{A}x$ is one-to-one.
+        \item For each column vector $b \in \mathbb{R}^n$, the equation $\mathbf{A}x = b$ has a unique solution.
+        \item The columns of $\mathbf{A}$ span $\mathbb{R}^n$.
+        \item The linear transformation $x \mapsto \mathbf{A}x$ is a surjection (onto).
+        \item There is an $n\times n$ matrix $\mathbf{C}$ such that $\mathbf{C}\mathbf{A} = \mathbf{I}_n$.
+        \item There is an $n\times n$ matrix $\mathbf{D}$ such that $\mathbf{A}\mathbf{D} = \mathbf{I}_n$.
+        \item The transpose matrix $\mathbf{A}^\text{T}$ is invertible. 
+        \item The columns of $\mathbf{A}$ form a basis for $\mathbb{R}^n$.
+        \item The column space of $\mathbf{A}$ is equal to $\mathbb{R}^n$.
+        \item The dimension of the column space of $\mathbf{A}$ is $n$.
+        \item The rank of $\mathbf{A}$ is $n$.
+        \item The null space of $\mathbf{A}$ is ${0}$.
+        \item The dimension of the null space of $\mathbf{A}$ is $0$.
+        \item $0$ fails to be an eigenvalue of $\mathbf{A}$.
+        \item The determinant of $\mathbf{A}$ is not $0$.
+        \item The orthogonal complement of the column space of $\mathbf{A} = \mathbf{A}^\perp$ is ${0}$.
+        \item The orthogonal complement of the null space of $\mathbf{A}$ is $\mathbb{R}^n$.
+        \item The row space of $\mathbf{A}$ is $\mathbb{R}^n$.
+        \item The matrix $\mathbf{A}$ has $n$ non-zero singular values (\textit{not studied in MATH-300}).
+    \end{enumerate}
+\end{defbox}
+\pagebreak
+\begin{defbox}{}
+    
+\end{defbox}
+\end{document}
