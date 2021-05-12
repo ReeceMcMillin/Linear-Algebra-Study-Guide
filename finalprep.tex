@@ -27,6 +27,8 @@
 \hyperlink{diag}{4. The Diagonalization Theorem}
 
 \hyperlink{imt}{5. Invertible Matrix Theorem}
+
+\hyperlink{compeig}{6. Complex Eigenvalue Decomposition}
 \pagebreak
 \normalsize
 \begin{defbox}{Cramer's Rule}
@@ -94,7 +96,45 @@
     \end{enumerate}
 \end{defbox}
 \pagebreak
-\begin{defbox}{}
-    
+\begin{defbox}{\hypertarget{compeig}Complex Eigenvalue Decomposition}
+    Let $\textbf{A}$ be a real $2 \times 2$ matrix with a complex eigenvalue $\lambda = a - bi$ $(b \neq 0)$ and an associated eigenvector $v \in \mathbb{C}^2$. Then
+    \[
+        \mathbf{A} = \mathbf{PCP}^{-1} \text{, where } \mathbf{P} = \begin{bmatrix}\text{Re }v & \text{Im } v\end{bmatrix} \text{ and } \mathbf{C} = \begin{bmatrix}a & -b \\ b & a\end{bmatrix}
+    \]
+\end{defbox}
+\begin{defbox}{Inner Product}
+    \[
+        \mathbf{u \cdot v = u^Tv}
+    \]
+    Let $\mathbf{u}, \mathbf{v}, \mathbf{w}$ be vectors in $\mathbb{R}^n$ and let $c$ be a scalar. Then
+    \begin{enumerate}
+        \item $\mathbf{u \cdot v} = \mathbf{v \cdot u}$
+        \item $(\mathbf{u} + \mathbf{v}) \cdot \mathbf{w} = \mathbf{u} \cdot \mathbf{w} + \mathbf{v} \cdot \mathbf{w}$
+        \item $(c\mathbf{u}) \cdot \mathbf{v} = (c\mathbf{u \cdot v}) = \mathbf{u} \cdot (c\mathbf{v})$ 
+        \item $\mathbf{u \cdot u} \geq 0$, and $\mathbf{u \cdot u} = 0$ if and only if $\mathbf{u} = 0$.
+    \end{enumerate}
+\end{defbox}
+\begin{defbox}{Distance}
+    For $\mathbf{u}$ and $\mathbf{u} \in \mathbb{R}^n$, the \textbf{distance between $\mathbf{u}$ and $\mathbf{v}$}, written as $\text{dist}(\mathbf{u}, \mathbf{v})$, is the length of the vector $\mathbf{u} - \mathbf{v}$. That is,
+    \[
+        \text{dist}(\mathbf{u}, \mathbf{v}) = ||\mathbf{u} - \mathbf{v}||
+    \]
+\end{defbox}
+\begin{defbox}{Orthogonality}
+    Two vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$ are \textbf{orthogonal} to each other if $\mathbf{u \cdot v} = 0$.\\\\
+    Two vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$ are \textbf{orthogonal} to each other if $||\mathbf{u} + \mathbf{v}||^2 = ||\mathbf{u}||^2 + ||\mathbf{v}||^2$.
+    \subsubsection*{Orthogonal Complements}
+    \begin{enumerate}
+        \item A vector $x$ is in $\mathbf{W}^\perp$ if and only if $x$ is orthogonal to every vector in a set that spans $\mathbf{W}$.
+        \item $\mathbf{W}$ is a subspace of $\mathbb{R}^n$.
+    \end{enumerate}
+    \textbf{Theorem:} Let $\mathbf{A}$ be an $m \times n$ matrix. The orthogonal complement of the row space of $\mathbf{A}$ is the null space of $\mathbf{A}$, and the orthogonal complement of the column space of $\mathbf{A}$ is the null space of $\mathbf{A}^T$:
+    \[
+        (\text{Row }\mathbf{A})^\perp = \text{Null }\mathbf{A} \text{\quad and\quad} (\text{Col }\mathbf{A})^\perp = \text{Null }\mathbf{A}^\perp
+    \]
+    To find the angle between two nonzero vectors in either $\mathbb{R}^2$ or $\mathbb{R}^3$, the inner product can be used:
+    \[
+        \mathbf{u \cdot v} = ||\mathbf{u}|| ||\mathbf{v}|| \cos{\theta}
+    \]
 \end{defbox}
 \end{document}
