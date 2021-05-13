@@ -137,4 +137,48 @@
         \mathbf{u \cdot v} = ||\mathbf{u}|| ||\mathbf{v}|| \cos{\theta}
     \]
 \end{defbox}
+\pagebreak
+\begin{defbox}{Orthogonal Sets}
+    \textbf{Theorem: } If $S = {u_1, \dots, u_p}$ is an orthogonal set of nonzero vectors in $\mathbb{R}^n$, then $S$ is linearly independent and hence is a basis for the subspace spanned by $S$.\\\\
+    An \textbf{orthogonal basis} for a subspace $\mathbf{W}$ of $\mathbb{R}^n$ is a basis for $\mathbf{W}$ that is also an orthogonal set.\\\\
+    \textbf{Theorem: } Let $S = {u_1, \dots, u_p}$ be an orthogonal basis for a subspace $\mathbf{W}$ of $\mathbb{R}^n$. For each $y \in \mathbf{W}$, the weights in the linear combination
+    \[
+        y = c_1u_1 + \dots + c_pu_p
+    \]
+    are given by
+    \[
+        c_j = \frac{y \cdot u_j}{u_j \cdot u_j}\quad(j = 1,\dots,p)
+    \]
+\end{defbox}
+\begin{defbox}{Orthogonal Projection}
+    Given some nonzero vector $u$ in $\mathbb{R}^n$, consider the problem of decomposing a vector $y \in \mathbb{R}^n$ into the sum of two vectors, one a multiple of $u$ and the other orthogonal to $u$. We want to write
+    \[
+        y = \hat{y} + z,\quad z \perp u
+    \]
+    We can consider $\hat{y}$ to be the shadow of $y$ onto $W$ $(\hat{y} = \text{proj}_W{y})$ and z to be the remaining vertical component of $y$. This projection is determined by the \textit{subspace} $L$ spanned by $u$ (the line through $u$ and 0). $\hat{y}$ is denoted by $\text{proj}_Ly$ and is called the \textbf{orthogonal projection of $y$ onto $L$}. That is,
+    \[
+        \hat{y} = \text{proj}_L{y} = \frac{y\cdot u}{u\cdot u}u
+    \]
+\end{defbox}
+\begin{defbox}{The Best Approximation Theorem}
+    Let $\mathbf{W}$ be a subspace of $\mathbb{R}^n$, let $y$ be any vector in $\mathbb{R}^n$, and let $\hat{y}$ be the orthogonal projection of $y$ onto $\mathbf{W}$. Then $\hat{y}$ is the closest point in $\mathbf{W}$ to $y$, in the sense that
+    \[
+        ||y - \hat{y}|| < ||y - v||
+    \]
+    for all $v \in \mathbf{W}$ distinct from $\hat{y}$.
+\end{defbox}
+\begin{defbox}{The Gram-Schmidt Process}
+    Given a basis ${x_1, \dots, x_p}$ for a nonzero subspace $\mathbf{W}$ of $\mathbb{R}^n$, define
+    \begin{align*}
+        v_1 &= x_1\\
+        v_2 &= x_2 - \frac{x_2 \cdot v_1}{v_1\cdot v_1}v_1\\
+        v_3 &= x_3 - \frac{x_3 \cdot v_1}{v_1\cdot v_1}v_1 - \frac{x_3 \cdot v_2}{v_2\cdot v_2}v_2\\
+        &\vdots\\
+        v_p &= x_p - \frac{x_p \cdot v_1}{v_1\cdot v_1}v_1 - \frac{x_p \cdot v_2}{v_2\cdot v_2}v_2 - \dots - \frac{x_p \cdot v_{p-1}}{v_{p-1}\cdot v_{p-1}}v_{p-1}
+    \end{align*}
+    Then ${v_1, \dots, v_p}$ is an orthogonal basis for $\mathbf{W}$. In addition,
+    \[
+        \text{Span}\{v_1, \dots, v_k\} = \text{Span}\{x_1, \dots, x_k\}\quad\quad \text{for } 1 \leq k \leq p
+    \]
+\end{defbox}
 \end{document}
