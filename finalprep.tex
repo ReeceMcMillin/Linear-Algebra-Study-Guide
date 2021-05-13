@@ -16,8 +16,10 @@
 \author{Reece McMillin}
 \begin{document}
 \maketitle
-\tableofcontents
 \large
+\begin{center}
+\tableofcontents
+
 \hyperlink{cramer}{1. Cramer's Rule}
 
 \hyperlink{detarea}{2. Determinants as Area}
@@ -29,6 +31,23 @@
 \hyperlink{imt}{5. Invertible Matrix Theorem}
 
 \hyperlink{compeig}{6. Complex Eigenvalue Decomposition}
+
+\hyperlink{innerproduct}{7. Inner/Dot Products}
+
+\hyperlink{distance}{8. Distance}
+
+\hyperlink{orth}{9. Orthogonality}
+
+\hyperlink{orthsets}{10. Orthogonal Sets}
+
+\hyperlink{orthproj}{11. Orthogonal Projections}
+
+\hyperlink{approx}{12. Best-Approximation Theorem}
+
+\hyperlink{gram}{13. The Gram-Schmidt Process}
+
+\hyperlink{squares}{14. Least-Squares Problems}
+\end{center}
 \pagebreak
 \normalsize
 \begin{defbox}{Cramer's Rule}
@@ -103,6 +122,7 @@
     \]
 \end{defbox}
 \begin{defbox}{Inner Product}
+    \hypertarget{innerproduct}
     \[
         \mathbf{u \cdot v = u^Tv}
     \]
@@ -115,12 +135,14 @@
     \end{enumerate}
 \end{defbox}
 \begin{defbox}{Distance}
+    \hypertarget{distance}
     For $\mathbf{u}$ and $\mathbf{u} \in \mathbb{R}^n$, the \textbf{distance between $\mathbf{u}$ and $\mathbf{v}$}, written as $\text{dist}(\mathbf{u}, \mathbf{v})$, is the length of the vector $\mathbf{u} - \mathbf{v}$. That is,
     \[
         \text{dist}(\mathbf{u}, \mathbf{v}) = ||\mathbf{u} - \mathbf{v}||
     \]
 \end{defbox}
 \begin{defbox}{Orthogonality}
+    \hypertarget{orth}
     Two vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$ are \textbf{orthogonal} to each other if $\mathbf{u \cdot v} = 0$.\\\\
     Two vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$ are \textbf{orthogonal} to each other if $||\mathbf{u} + \mathbf{v}||^2 = ||\mathbf{u}||^2 + ||\mathbf{v}||^2$.
     \subsubsection*{Orthogonal Complements}
@@ -138,7 +160,7 @@
     \]
 \end{defbox}
 \pagebreak
-\begin{defbox}{Orthogonal Sets}
+\begin{defbox}{\hypertarget{orthsets}Orthogonal Sets}
     \textbf{Theorem: } If $S = {u_1, \dots, u_p}$ is an orthogonal set of nonzero vectors in $\mathbb{R}^n$, then $S$ is linearly independent and hence is a basis for the subspace spanned by $S$.\\\\
     An \textbf{orthogonal basis} for a subspace $\mathbf{W}$ of $\mathbb{R}^n$ is a basis for $\mathbf{W}$ that is also an orthogonal set.\\\\
     \textbf{Theorem: } Let $S = {u_1, \dots, u_p}$ be an orthogonal basis for a subspace $\mathbf{W}$ of $\mathbb{R}^n$. For each $y \in \mathbf{W}$, the weights in the linear combination
@@ -151,6 +173,7 @@
     \]
 \end{defbox}
 \begin{defbox}{Orthogonal Projection}
+    \hypertarget{orthproj}
     Given some nonzero vector $u$ in $\mathbb{R}^n$, consider the problem of decomposing a vector $y \in \mathbb{R}^n$ into the sum of two vectors, one a multiple of $u$ and the other orthogonal to $u$. We want to write
     \[
         y = \hat{y} + z,\quad z \perp u
@@ -161,6 +184,7 @@
     \]
 \end{defbox}
 \begin{defbox}{The Best Approximation Theorem}
+    \hypertarget{approx}
     Let $\mathbf{W}$ be a subspace of $\mathbb{R}^n$, let $y$ be any vector in $\mathbb{R}^n$, and let $\hat{y}$ be the orthogonal projection of $y$ onto $\mathbf{W}$. Then $\hat{y}$ is the closest point in $\mathbf{W}$ to $y$, in the sense that
     \[
         ||y - \hat{y}|| < ||y - v||
@@ -168,6 +192,7 @@
     for all $v \in \mathbf{W}$ distinct from $\hat{y}$.
 \end{defbox}
 \begin{defbox}{The Gram-Schmidt Process}
+    \hypertarget{gram}
     Given a basis ${x_1, \dots, x_p}$ for a nonzero subspace $\mathbf{W}$ of $\mathbb{R}^n$, define
     \begin{align*}
         v_1 &= x_1\\
@@ -181,4 +206,54 @@
         \text{Span}\{v_1, \dots, v_k\} = \text{Span}\{x_1, \dots, x_k\}\quad\quad \text{for } 1 \leq k \leq p
     \]
 \end{defbox}
+\begin{defbox}{Least-Squares Problems}
+    \hypertarget{squares}
+    If $\mathbf{A}$ is $m \times n$ and $b \in \mathbb{R}^n$, a \textbf{least-squares solution} of $\mathbf{A}x=b$ is some $\hat{X} \in \mathbb{R}^n$ such that
+    \[
+        ||b-\mathbf{A}\hat{x}|| \leq ||b - \mathbf{A}x||
+    \]
+    for all $x \in \mathbb{R}^n$.\\\\
+    \textbf{Theorem: }The set of least-squares solutions of $\mathbf{A}x=b$ coincides with the nonempty set of solutions of the normal equations $\mathbf{A^TA}x=\mathbf{A^T}b$.\\
+\end{defbox}
+\section*{\hypertarget{defs}Definitions}
+\begin{itemize}
+    \item \textbf{Adjugate}: The matrix $\text{adj }\mathbf{A}$ formed from a square matrix $\mathbf{A}$ by replacing the $(i, j)$-entry by the $(i, j)$-cofactor, for all $i$ and $j$, and then transposing the resulting matrix.
+    \item \textbf{Basis}: An indexed set $\beta=\{v_1, \dots, v_p\}$ in $V$ such that $\beta$ is a linearly independent set and the subspaced spanned by $\beta$ coincides with $H = \text{Span}\{v_1, \dots, v_p\}$.
+    \item \textbf{Best Approximation}: The closest point in a given subspace to a given vector.
+    \item \textbf{Characteristic Equation}: $\det({\mathbf{A}-\lambda\mathbf{I}}) = 0$
+    \item \textbf{Column Space}: The set $\text{Col }\mathbf{A}$ of all linear combinations of the columns of $\mathbf{A}$. If $\mathbf{A} = [a_1, \dots, a_n]$, then $\text{Col } A = \text{Span}(a_1, \dots, a_n)$.
+    \item \textbf{Diagonalizable}: A matrix that can be written in factored form as $PDP^-1$, where $D$ is a diagonal matrix and $P$ is an invertible matrix.
+    \item \textbf{Eigenspace}: The set of \textit{all} solutions of $Ax=\lambda x$, where $\lambda$ is an eigenvalue of $A$.
+    \item \textbf{Elementary Matrix}: An invertible matrix that results by performing exactly one elementary row operation on an identity matrix.
+    \item \textbf{Linear Combination}: A sum of scalar multiples of vectors. The scalars are called the \textit{weights}.
+    \item \textbf{Linear Dependence Relation}: A homogeneous vector equation where the weights are all specified and at least one weight is nonzero.
+    \item \textbf{Linearly Dependent}: An indexed set $\{v_1, \dots, v_p\}$ with the property that there exist weights $c_1, \dots, c_p$, not all zero, such that $c_1v_1 + \dots + c_pv_p = 0$. That is, the vector equation $c_1v_1 + \dots + c_pv_p = 0$ has a \textit{nontrivial} solution.
+    \item \textbf{Linearly Independent}: An indexed set $\{v_1, \dots, v_p\}$ with the property that the vector equation $c_1v_1 + \dots + c_pv_p = 0$ has \textit{only the trivial solution}.
+    \item \textbf{LU Factorization}: The representation of a matrix $\mathbf{A}$ in the form $\mathbf{A}=\mathbf{LU}$ where $\mathbf{L}$ is a square lower triangular matrix with ones on the diagonal (a unit lower triangular matrix) and $\mathbf{U}$ is an echelon form of $\mathbf{A}$.
+    \item \textbf{Matrix Transformation}: A mapping $x \mapsto \mathbf{A}x$ where $\mathbf{A}$ is an $m \times n$ matrix and $x$ represents any vector in $\mathbb{R}^n$.
+    \item \textbf{Norm}: The length of vector $v$, or $||v|| = \sqrt{v \cdot v}$.
+    \item \textbf{Normal Vector}: A vector $n \in \mathbb{R}^n$ such that $n \cdot x = 0$ for all $x \in V$.
+    \item \textbf{Null Space}: The set $\text{Nul }\mathbf{A}$ of all solutions to the homogeneous equation $\mathbf{A}x=0$.
+    \item \textbf{One-to-One}: A mapping $T: \mathbb{R}^n \to \mathbb{R}^m$ such that each $b \in \mathbb{R}^m$ is the image of \textit{at most} one $x \in \mathbb{R}^n$.
+    \item \textbf{Onto}: A mapping $T: \mathbb{R}^n \to \mathbb{R}^m$ such that each $b \in \mathbb{R}^m$ is the image of \textit{at least} one $x \in \mathbb{R}^n$.
+    \item \textbf{Orthogonal Basis}: A basis that is also an orthogonal set.
+    \item \textbf{Orthogonal Complement}: The set $W^\perp$ of all vectors orthogonal to $W$.
+    \item \textbf{Orthogonal Decomposition}: The representation of a vector $y$ as the sum of two vectors, one in a specified subspace $W$ and the other in $W^\perp$.
+    \item \textbf{Orthonormal Basis}: A basis that is an orthogonal set of unit vectors.
+    \item \textbf{Plane through u, v, and the origin:} A set whose parametric equation is $x = su + tv \quad (s, t \in \mathbb{R})$, with $u$ and $v$ linearly independent.
+    \item \textbf{Proper Subspace}: Any subspace of a vector space $V$ other than $V$ itself.
+    \item \textbf{Range}: The set of all vectors of the form $T(x)$ for some $x$ in the domain of $T$.
+    \item \textbf{Reduced Echelon Matrix}: A rectangular matrix in echelon form that has these additional properties: The leading entry in each nonzero row is 1, and each leading 1 is the only nonzero entry in its column.
+    \item \textbf{Row Equivalent}: Two matrices for which there exists a finite sequence of row operations that transforms one matrix into the other.
+    \item \textbf{Row Space}: The set $\text{Row }\mathbf{A}$ of all linear combinations of the vectors formed from the rows of $\mathbf{A}$; also denoted $\text{Col }\mathbf{A}^T$.
+    \item \textbf{Span}: The set of all linear combinations of $v_1, \dots, v_p$. Also, the subspace generated by $v_1, \dots, v_p$.
+    \item \textbf{Subspace}: A subset $H$ of some vector space $V$ such that $H$ has these properties:
+        \begin{enumerate}
+            \item The zero vector of $V$ is in $H$.
+            \item $H$ is closed under vector addition.
+            \item $H$ is closed under multiplication by scalars.
+        \end{enumerate}
+    \item \textbf{Linear System}: A collection of one or more linear equations involving the same set of variables, say $x_1, \dots, x_n$.
+    \item \textbf{Vector Space}: A set of objects, called vectors, on which two operations are defined: addition and multiplication by scalars.
+\end{itemize}
 \end{document}
